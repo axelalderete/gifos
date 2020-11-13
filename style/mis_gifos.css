@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    text-decoration: none;
+}
+
+
+
+.title_mis_gifos{
+    padding-top: 3rem;
+    text-align: center;
+}
+
+.h3_mis_gifos{
+    font-size: 25px;
+    color: #572EE5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.imagenes_mis_gifos{ 
+    margin-top: 35px; 
+    display: grid; 
+    justify-content: center;
+    gap: 30px;
+    grid-template-columns: repeat(4, auto);
+    
+}
+
+.img_mis_gifos{
+    width: 260px;
+    height: 200px;
+}
+
+.ver_mas_fav{
+    
+    margin-top: 80px;
+    display: flex;
+    justify-content: center; 
+}
+
+.boton_ver_mas{
+    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    color: #572EE5;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 127px;
+    height: 50px;
+    border: solid #572EE5 2px ;
+    border-radius: 50px;
+}

@@ -1,0 +1,120 @@
+.title {
+    font-size: 20px;
+    margin-top: 76px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #572EE5;
+}
+
+.p_gifos {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #50E3C2;
+}
+
+.ilustra_header {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.busqueda_central {
+    display: flex;
+    justify-content: center;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+    width: 551px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #572EE5;
+    border-radius: 27px;
+    outline: none;
+    padding-left: 1.5rem;
+}
+
+.icon_search {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.input_search{
+    outline: none;
+    width: 100%;
+}
+
+.trending {
+    margin-top: 73px;
+    display: flex;
+    justify-content: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #572EE5;
+    text-align: center;
+    line-height: 25px;
+}
+
+.p_trending {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+@media(max-width:500px){
+
+    .title{
+        align-items: center;
+        margin-left: 3rem;
+        width: 310px;
+        height: 99px;
+    }
+    .ilustra_header{
+        width: 350px;
+        height: 130px; 
+    }
+    .busqueda_central{
+        padding-left: 0.5rem;
+        width: 350px;
+        height: 50px;
+    }
+    .p_trending{
+        font-size: 15px;
+    }
+
+    .trending{
+        width: 365px;
+        font-size: 20px;
+    }
+    
+}
+
+@media(max-width:360px){
+    .img_ilustra_header{
+        width: 273px;
+    }
+    .title{
+        align-items: center;
+        margin-left: 3rem;
+        width: 220px;
+        height: 99px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .ilustra_header{
+        padding-left: 5rem;
+        width: 226px;
+        height: 130px; 
+    }
+    .busqueda_central{
+        padding-left: 0.5rem;
+        width: 300px;
+        height: 50px;
+    }
+    .trending{
+        width: 310px;
+        
+    }
+}
