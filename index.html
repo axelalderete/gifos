@@ -52,8 +52,15 @@
 
         <div class="busqueda_central">
             <div class="busqueda">
-                <input id="search-input" class="input_search" type="text" placeholder="Busca GIFOS y más">
-                <img onclick="search()" class="icon_search" src="/img/icon-search.svg" alt="img">
+                <div>
+                    <input id="search-input" class="input_search" type="text" placeholder="Busca GIFOS y más">
+                    <img id="img-search" onclick="clearSearch()" class="icon_search" src="/img/icon-search.svg"
+                        alt="img">
+                </div>
+
+                <div id="suggetion-search" class="suggestion">
+
+                </div>
             </div>
         </div>
 
@@ -65,18 +72,18 @@
         </div>
         <div id="favorites-page2">
             <article class="favoritos">
-    
+
                 <div class="title_favoritos">
                     <h3 class="h3_favoritos">Favoritos</h3>
                 </div>
-    
+
                 <div id="img-gifos" class="img_favoritos">
-    
+
                 </div>
                 <div class="ver_mas_fav">
                     <div onclick="verMas()" class="boton_ver_mas">VER MAS</div>
                 </div>
-    
+
             </article>
         </div>
     </div>
@@ -85,22 +92,24 @@
         <article class="favoritos">
 
             <div class="title_favoritos">
-                    <img class="icon_favoritos" src="/img/icon-favoritos.svg" alt="img">
+                <img class="icon_favoritos" src="/img/icon-favoritos.svg" alt="img">
                 <h3 class="h3_favoritos">Favoritos</h3>
             </div>
             <div id="img_favoritos" class="img_favoritos">
-                <img class="img_fav" src="https://giphy.com/gifs/moodman-dog-sup-Y42OeCcJI4ufXDQ3oA" alt="img">
+                <div>
+                    <img class="img_fav" src="https://media.giphy.com/media/bbshzgyFQDqPHXBo4c/giphy.gif" alt="img">
+                    <div class="img-iconos">
+                        <img src="/img/icon-fav.svg" alt="">
+                        <img src="/img/icon-download.svg" alt="">                        
+                        <img src="/img/icon-max-normal.svg" alt="">
+                    </div>
+                </div>
                 <img class="img_fav" src="https://media.giphy.com/media/bbshzgyFQDqPHXBo4c/giphy.gif" alt="img">
-                <img class="img_fav" src="https://giphy.com/embed/Y42OeCcJI4ufXDQ3oA" alt="img">
-                <img class="img_fav" src="https://gph.is/g/ZORqBNY" alt="img">
-                <img class="img_fav" src="http://imgur.com/gallery/fOLKxAV" alt="img">
-                <img class="img_fav" src="http://imgur.com/gallery/fOLKxAV" alt="img">
-                <img class="img_fav" src="https://giphy.com/gifs/NohOlMRtBiGcg" alt="img">
-                <img class="img_fav" src="https://giphy.com/embed/NohOlMRtBiGcg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
+
+                <img class="img_fav" src="https://media.giphy.com/media/bbshzgyFQDqPHXBo4c/giphy.gif" alt="img">
+
+
+
             </div>
             <div class="ver_mas_fav">
                 <div class="boton_ver_mas">VER MAS</div>
@@ -114,7 +123,7 @@
 
             <div class="title_mis_gifos">
                 <img class="icon_mis_gifos" src="/img/icon-mis-gifos.svg" alt="img">
-                <h3 class="h3_mis_gifos">Mis GIFOS  </h3>
+                <h3 class="h3_mis_gifos">Mis GIFOS </h3>
             </div>
 
             <div id="img_favoritos" class="img_favoritos">
