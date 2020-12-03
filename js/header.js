@@ -93,9 +93,9 @@ function agregarElementosFavoritos() {
         var iconMax = document.createElement("img");
         iconMax.classList.add('icon-max');
         iconMax.classList.add('icon-tarjeta');
-        iconMax.setAttribute('id', `img-max-${i}`);
+        iconMax.setAttribute('id', element);
         iconMax.onclick = function (ev) {
-            clickIconMax(ev);
+            clickIconMax(ev.target.id);
         };
         // IMG
         var node = document.createElement("img");

@@ -163,9 +163,9 @@ function agregarElementosBusqueda() {
         var iconMax = document.createElement("img");
         iconMax.classList.add('icon-max');
         iconMax.classList.add('icon-tarjeta');
-        iconMax.setAttribute('id', `img-max-${i}`);
+        iconMax.setAttribute('id', element.images.original.url);
         iconMax.onclick = function (ev) {
-            clickIconMax(ev);
+            clickIconMax(ev.target.id);
         };
         // IMG
         var node = document.createElement("img");
@@ -201,14 +201,16 @@ async function clickIconDow(id) {
 }
 
 function clickIconMax(ev) {
-    console.log('max')
+    console.log(ev);
     const header = document.getElementById('header'); 
     const max = document.getElementById('max');
     const mainPag = document.getElementById('main-pag');
     const sectionGifos = document.getElementById('sectionGifos');
     const footer = document.getElementById('footer');
     const fovoritesPage = document.getElementById('favorites-page');
-    
+    document.getElementById('img-max').src = ev;
+
+
     header.style.display = 'none';
     max.style.display = 'block';
     mainPag.style.display = 'none';

@@ -19,8 +19,8 @@
     border: 1px solid #572EE5;
     text-align: center;
     color: #572EE5;
-    padding-top: 7rem;
-    line-height: 2rem;
+    padding-top: 2rem;
+    line-height: 3rem;
     margin: 0px 6rem;
 }
 
@@ -37,6 +37,7 @@
     justify-content: center;
     border-bottom: 8px solid #572EE5;
     border-radius: 23px;
+    padding-left: 3rem;
 }
 
 .pasos{
@@ -49,6 +50,15 @@
     padding-top: 2px;
     font-size: 18px;
     color: #572EE5;
+}
+
+.paso-on{
+    background: #572EE5;
+    color: white;    
+}
+.paso-off{
+    background: white;
+    color: #572EE5;    
 }
 
 .comenzar{
@@ -68,9 +78,33 @@
     width: 127px;
     height: 50px;
     cursor: pointer;
-    
+}
+
+.ocultar {
+    display: none;
 }
 
 .img-pelicula{
     padding-top: 23%;
+}
+
+.video-gifo {
+    z-index: 1000;
+    width: 480px;
+    height: 320px;
+}
+
+.contenedor-repetir{
+    width: 174px;
+}
+
+.tiempo{
+    font-size: 15px;;
+    color: #572EE5;
+    margin: 1.2rem 0 0 602%;
+}
+.repetir{
+    font-size: 15px;;
+    color: #572EE5;
+    margin: 1.2rem 0 0 30%;
 }

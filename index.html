@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://use.fontawesome.com/1df506b6ad.js"></script>
+    <!-- recommended -->
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style/menu.css" media="">
@@ -17,6 +20,7 @@
     <link rel="stylesheet" href="/style/title.css" media="">
     <link rel="stylesheet" href="/style/max.css" media="">
     <link rel="stylesheet" href="/style/crearGifos.css" media="">
+    <link rel="stylesheet" href="/style/cronometro.css" media="">
 
     <title>Document</title>
 </head>
@@ -152,19 +156,29 @@
         </div>
         <div class="columna-centarl">
             <div class="crear-gifos-contenedor">
-                <h3 id="h3-crear-gifos" >Aquí podrás <br> crear tus propios <span
-                        class="span-gifos">GIFOS</span> <br>
+                <h3 id="h3-crear-gifos">Aquí podrás <br> crear tus propios <span class="span-gifos">GIFOS</span> <br>
                 </h3>
                 <p id="p-crear-gifos" class="crear-gifos-p">¡Crea tu GIFO en sólo 3 pasos! <br>
                     (sólo necesitas una cámara para grabar un video)</p>
+                <video class="video-gifo ocultar" id="video-gifo"></video>
             </div>
             <div class="crear-gifos-pasos">
                 <div id="paso1" class="pasos">1</div>
                 <div id="paso2" class="pasos">2</div>
                 <div id="paso3" class="pasos">3</div>
+                <div id="contenedor">
+                    <p class="tiempo" id="Tiempo">00:00</p>
+                </div>
+
+                <div class="contenedor-repetir ocultar" id="contenedor-repetir">
+                    <p class="repetir" id="Tiempo">REPETIR CAPTURA</p>
+                </div>
             </div>
             <div id="comenzar" class="comenzar">
-                <div onclick="comenzar()" class="boton-comenzar">comenzar</div>
+                <div id="btn-comenzar" onclick="comenzar()" class="boton-comenzar">COMENZAR</div>
+                <div id="btn-grabar" onclick="grabar()" class="boton-comenzar ocultar">GRABAR</div>
+                <div id="btn-finalizar" onclick="finalizar()" class="boton-comenzar ocultar">FINALIZAR</div>
+                <div id="btn-subir-gif" onclick="subirGif()" class="boton-comenzar ocultar">SUBIR GIF</div>
             </div>
         </div>
         <div class="img-pelicula">
@@ -177,7 +191,7 @@
     <div id="max" class="max" style="display: none;">
         <div onclick="closeMax()" class="close-max"><img src="/img/close.svg" alt=""></div>
         <div class="cont-img-max">
-            <img class="img-max" src="/img/element-camara.svg" alt="img">
+            <img id="img-max" class="img-max" src="/img/element-camara.svg" alt="img">
         </div>
         <div class="max-footer">
             <div class="p-img-max">
