@@ -15,11 +15,16 @@
     <link rel="stylesheet" href="/style/trending.css" media="">
     <link rel="stylesheet" href="/style/header.css" media="">
     <link rel="stylesheet" href="/style/title.css" media="">
+    <link rel="stylesheet" href="/style/max.css" media="">
+    <link rel="stylesheet" href="/style/crearGifos.css" media="">
+
     <title>Document</title>
 </head>
 
 <body id="body-gifos">
-    <header>
+
+    <!-- encabezado----------------------- -->
+    <header id="header">
         <nav id="nav-header">
             <input type="checkbox" id="check">
             <label class="checkbtn" for="check">
@@ -39,21 +44,23 @@
         </nav>
     </header>
 
+    <!-- titulo principal-------------------------------- -->
     <div id="main-pag">
         <div class="title">
             <h1 id="h1Title">Inspírate, busca, guarda, y crea <br> los mejores <span class="p_gifos">GIFOS</span> </h1>
         </div>
 
-
+        <!-- imagen de la busqueda------------------- -->
         <article class="ilustra_header">
             <img class="img_ilustra_header" src="/img/ilustra_header.svg" alt="img">
         </article>
 
-
+        <!-- busqueda central --------------------------------- -->
         <div class="busqueda_central">
             <div class="busqueda">
-                <div>
-                    <input id="search-input" class="input_search" type="text" placeholder="Busca GIFOS y más">
+                <div class="searchInterno">
+                    <input id="search-input" autocomplete="off" class="input_search" type="text"
+                        placeholder="Busca GIFOS y más">
                     <img id="img-search" onclick="clearSearch()" class="icon_search" src="/img/icon-search.svg"
                         alt="img">
                 </div>
@@ -64,23 +71,26 @@
             </div>
         </div>
 
+        <!-- trending------------------------------ -->
 
-        <div class="trending">
+        <div id="div-trending" class="trending">
             <h3 id="h3Trending">Trending: <br> <span class="p_trending"> Reactions, Entertainment, Sports, Stickers,
                     Artists
                 </span></h3>
         </div>
+
+        <!-- grilla de gifos del buscador----------------------- -->
         <div id="favorites-page2">
             <article class="favoritos">
 
-                <div class="title_favoritos">
-                    <h3 class="h3_favoritos">Favoritos</h3>
+                <div id="titulo-busqueda" class="title_favoritos">
+                    <h3 class="h3_favoritos" id="search-text-select"></h3>
                 </div>
 
                 <div id="img-gifos" class="img_favoritos">
 
                 </div>
-                <div class="ver_mas_fav">
+                <div id="btn-ver-mas" class="ver_mas_fav">
                     <div onclick="verMas()" class="boton_ver_mas">VER MAS</div>
                 </div>
 
@@ -88,6 +98,7 @@
         </div>
     </div>
 
+    <!-- favoritos------------------------------- -->
     <div id="favorites-page" style="display: none;">
         <article class="favoritos">
 
@@ -96,20 +107,6 @@
                 <h3 class="h3_favoritos">Favoritos</h3>
             </div>
             <div id="img_favoritos" class="img_favoritos">
-                <div>
-                    <img class="img_fav" src="https://media.giphy.com/media/bbshzgyFQDqPHXBo4c/giphy.gif" alt="img">
-                    <div class="img-iconos">
-                        <img src="/img/icon-fav.svg" alt="">
-                        <img src="/img/icon-download.svg" alt="">                        
-                        <img src="/img/icon-max-normal.svg" alt="">
-                    </div>
-                </div>
-                <img class="img_fav" src="https://media.giphy.com/media/bbshzgyFQDqPHXBo4c/giphy.gif" alt="img">
-
-                <img class="img_fav" src="https://media.giphy.com/media/bbshzgyFQDqPHXBo4c/giphy.gif" alt="img">
-
-
-
             </div>
             <div class="ver_mas_fav">
                 <div class="boton_ver_mas">VER MAS</div>
@@ -118,6 +115,7 @@
         </article>
     </div>
 
+    <!-- mis gifos----------------------------------------- -->
     <div id="gifos-page" style="display: none;">
         <article class="mis_gifos">
 
@@ -127,12 +125,18 @@
             </div>
 
             <div id="img_favoritos" class="img_favoritos">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_fav" src="/img/button-crear-gifo.svg" alt="img">
-
+                <img class="img_fav"
+                    src="https://media1.giphy.com/media/xUA7aT4k7JLXH71zG0/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
+                    alt="img">
+                <img class="img_fav"
+                    src="https://media4.giphy.com/media/eUJJITvncveDK/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
+                    alt="img">
+                <img class="img_fav"
+                    src="https://media3.giphy.com/media/Qvtzr3MZc6WI0/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
+                    alt="img">
+                <img class="img_fav"
+                    src="https://media3.giphy.com/media/3oz8xWqZk843O0TPXy/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
+                    alt="img">
             </div>
             <div class="ver_mas_fav">
                 <div class="boton_ver_mas">VER MAS</div>
@@ -141,8 +145,52 @@
         </article>
     </div>
 
-    <!-- trending antes del footer------------------------- -->
+    <!-- CREAR GIFOSSS ------------------------- -->
+    <div id="crear-gifos" class="crear-gifos" style="display: none;">
+        <div class="img-camara">
+            <img src="/img/camara.svg" alt="img">
+        </div>
+        <div class="columna-centarl">
+            <div class="crear-gifos-contenedor">
+                <h3 id="h3-crear-gifos" >Aquí podrás <br> crear tus propios <span
+                        class="span-gifos">GIFOS</span> <br>
+                </h3>
+                <p id="p-crear-gifos" class="crear-gifos-p">¡Crea tu GIFO en sólo 3 pasos! <br>
+                    (sólo necesitas una cámara para grabar un video)</p>
+            </div>
+            <div class="crear-gifos-pasos">
+                <div id="paso1" class="pasos">1</div>
+                <div id="paso2" class="pasos">2</div>
+                <div id="paso3" class="pasos">3</div>
+            </div>
+            <div id="comenzar" class="comenzar">
+                <div onclick="comenzar()" class="boton-comenzar">comenzar</div>
+            </div>
+        </div>
+        <div class="img-pelicula">
+            <img src="/img/pelicula.svg" alt="img">
+        </div>
 
+    </div>
+
+    <!-- MAXXXXXXXXX--------------------- -->
+    <div id="max" class="max" style="display: none;">
+        <div onclick="closeMax()" class="close-max"><img src="/img/close.svg" alt=""></div>
+        <div class="cont-img-max">
+            <img class="img-max" src="/img/element-camara.svg" alt="img">
+        </div>
+        <div class="max-footer">
+            <div class="p-img-max">
+                <p>User <br>Titulo GIFO</p>
+            </div>
+            <div class="iconos-img-max">
+                <img src="/img/icon-fav.svg" alt="img">
+                <img src="/img/icon-download.svg" alt="img">
+            </div>
+        </div>
+    </div>
+
+    <!-- trending antes del footer------------------------- -->
     <div id="sectionGifos" class="trendingGifos">
         <div class="title_section">
             <h2 id="h2TrendinGifos">Trending GIFOS <br> <span class="p_section">Mira los últimos GIFO de nuestra
@@ -153,20 +201,22 @@
         <section class="section">
             <div class="boton_section" onclick=""><img src="/img/button-slider-left.svg" alt="img"></div>
             <div class="img_section">
-                <img class="img_gif_section img_gif_section1" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_gif_section img_gif_section2" src="/img/button-crear-gifo.svg" alt="img">
-                <img class="img_gif_section img_gif_section3" src="/img/button-crear-gifo.svg" alt="img">
+                <img class="img_gif_section img_gif_section1"
+                    src="https://media1.giphy.com/media/vzO0Vc8b2VBLi/giphy.gif?cid=e67c63626ofggu220qfymo68oympe3bgyf8r2myy9cnv7adw&rid=giphy.gif"
+                    alt="img">
+                <img class="img_gif_section img_gif_section2"
+                    src="https://media4.giphy.com/media/ZVik7pBtu9dNS/giphy.gif?cid=e67c63626ofggu220qfymo68oympe3bgyf8r2myy9cnv7adw&rid=giphy.gif"
+                    alt="img">
+                <img class="img_gif_section img_gif_section3"
+                    src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=e67c63626ofggu220qfymo68oympe3bgyf8r2myy9cnv7adw&rid=giphy.gif"
+                    alt="img">
             </div>
             <div class="boton_section" onclick=""><img src="/img/Button-Slider-right.svg" alt=""></div>
         </section>
     </div>
 
-
-
-
     <!-- footer--------------------------------- -->
-
-    <footer class="footer">
+    <footer id="footer" class="footer">
         <!-- <h4>Compartir en:</h4> -->
         <div class="icon-footer">
             <h4>Compartir en:</h4>
@@ -179,9 +229,9 @@
         <h4 class="rights-footer">© GIFOS 2020 All Rights Reserved.</h4>
     </footer>
 
-
     <script src="/js/header.js"></script>
     <script src="/js/search.js"></script>
+    <script src="/js/crearGifos.js"></script>
 </body>
 
 </html>

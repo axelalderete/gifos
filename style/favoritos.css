@@ -1,7 +1,67 @@
+.container-tarjeta {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.img-iconos {
+    display: inline-table;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 260px;
+    height: 200px;
+    opacity: 0;
+}
+
+.img-iconos:hover {
+    opacity: 1;}
+
+.icon-tarjeta{
+    cursor: pointer;
+}
+.icon-tarjeta:hover{
+    opacity: 0.5 ;
+}
+
+.icon-fav {
+    content: url(../img/icon-fav.svg);
+}
+
+.icon-dow {
+    content: url(../img/icon-download.svg);
+}
+
+.icon-max {
+    content: url(../img/icon-max-normal.svg);
+}
+
+.icon-fav:hover {
+    content: url(../img/icon-fav-hover.svg);
+}
+.icon-dow:hover {
+    content: url(../img/icon-download-hover.svg);
+}
+.icon-max:hover {
+    content: url(../img/icon-max-hover.svg);
+}
+
+.icon-fav:active{
+    content: url(../img/icon-fav-active.svg);
+    position: relative;
+    top: -10px;
+}
+
+.icon-favoritos{
+    content: url(/img/icon-fav-active.svg);
+    position: relative;
+    top: -10px;
+}
 
 
 
-
+/* -------------------------------------------------------------------- */
 
 .title_favoritos {
     margin-top: 3rem;
@@ -21,12 +81,17 @@
     justify-content: center;
     gap: 30px;
     grid-template-columns: repeat(4, auto);
-    
+
 }
 
 .img_fav {
+    display: block;
     width: 260px;
     height: 200px;
+}
+
+.img_fav:hover {
+   opacity: 0.5;
 }
 
 .ver_mas_fav {
@@ -37,6 +102,7 @@
 }
 
 .boton_ver_mas {
+    
     font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 13px;
     color: #572EE5;
@@ -63,14 +129,22 @@
 
 @media(max-width: 780px) {
     .img_favoritos {
-        margin-top: 35px;
+        margin-top: 8rem;
         display: grid;
         justify-content: center;
         gap: 10px -50px;
         grid-template-columns: repeat(2, auto);
     }
+
     .img_fav {
         width: 136px;
         height: 120px;
     }
+
+    .img-iconos {
+        width: 136px;
+        height: 120px;
+    }
+
+
 }

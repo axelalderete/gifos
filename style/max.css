@@ -1,0 +1,29 @@
+.max {
+    padding-top: 5rem;
+    height: 30rem;
+}
+
+.close-max {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20%;
+    cursor: pointer;
+}
+
+.cont-img-max {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.img-max {
+    width: 695px;
+    height: 385px;
+    border: solid black;
+}
+
+.max-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 10rem;
+}
