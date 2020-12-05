@@ -33,6 +33,13 @@
     content: url(../img/icon-download.svg);
 }
 
+.icon-download {
+    content: url(../img/icon-download.svg);
+    padding-left: 26rem;
+}
+
+
+
 .icon-max {
     content: url(../img/icon-max-normal.svg);
 }

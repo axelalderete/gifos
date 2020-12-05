@@ -113,6 +113,57 @@ function agregarElementosFavoritos() {
     });
 }
 
+function agregarElementosMisGifos(lista) {
+    if (!lista) return;
+    lista.forEach((element, i) => {
+
+        var divContenedor = document.createElement("div");
+        divContenedor.classList.add('container-tarjeta');
+
+        var divIcon = document.createElement("div");
+        divIcon.classList.add('img-iconos');
+
+
+        // IMG ICON X3
+        var iconFav = document.createElement("img");
+        iconFav.classList.add('icon-favoritos');
+        iconFav.classList.add('icon-tarjeta');
+        iconFav.setAttribute('id', element);
+        iconFav.onclick = function (ev) {
+            clickDeleteFav(ev.target.id);
+        };
+
+        var iconDow = document.createElement("img");
+        iconDow.classList.add('icon-dow');
+        iconDow.classList.add('icon-tarjeta');
+        iconDow.setAttribute('id', element);
+        iconDow.onclick = function (ev) {
+            clickIconDow(ev.target.id);
+        };
+
+        var iconMax = document.createElement("img");
+        iconMax.classList.add('icon-max');
+        iconMax.classList.add('icon-tarjeta');
+        iconMax.setAttribute('id', element);
+        iconMax.onclick = function (ev) {
+            clickIconMax(ev.target.id);
+        };
+        // IMG
+        var node = document.createElement("img");
+        node.setAttribute('src', element);
+        node.setAttribute('id', `img-gifo-${i}`);
+        node.classList.add('img_fav');
+
+        // ARMAR BLOQUE
+        divIcon.appendChild(iconFav);
+        divIcon.appendChild(iconDow);
+        divIcon.appendChild(iconMax);
+        divContenedor.appendChild(node);
+        divContenedor.appendChild(divIcon);
+        document.getElementById("img-mis-gifos").appendChild(divContenedor);
+    });
+}
+
 function goToMyGifos() {
     const divMain = document.getElementById('main-pag');
     const divGif = document.getElementById('gifos-page');
@@ -123,6 +174,9 @@ function goToMyGifos() {
     divGif.style.display = 'block';
     divFav.style.display = 'none';
     console.log('IR A LA PAGINA GIFOS');
+    listaMisGifos = JSON.parse(localStorage.getItem('misGifos'));
+    agregarElementosMisGifos(listaMisGifos);
+
 }
 
 function clickDeleteFav(id) {

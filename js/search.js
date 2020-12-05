@@ -1,4 +1,4 @@
-const apiKay = '3ptHQLAjuYlfN1FQVw03bWEaA0YqcwNf';
+const ApiKey = '3ptHQLAjuYlfN1FQVw03bWEaA0YqcwNf';
 let lista = [] // TOTAL DE LOS GIFOS ENCONTRADOS
 let listaMostrar = [] // SOLO LOS DOCE PRIMEROS
 let listaFavoritos = [];
@@ -12,7 +12,7 @@ function search() {
     mostrarVerMas();
     eliminarBusqueda();
     const search = document.getElementById('search-input').value;
-    const user = fetch(`http://api.giphy.com/v1/gifs/search?api_key=${apiKay}&q=${search}`);
+    const user = fetch(`http://api.giphy.com/v1/gifs/search?api_key=${ApiKey}&q=${search}`);
     user.then(res => res.json())
         .then(data => {
             // aca ya eliminamos lo que habia
@@ -87,7 +87,7 @@ let mostrarSuggestion = 0;
 function searchSuggestion() {
 
     const searchs = document.getElementById('search-input').value;
-    const suggestion = fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKay}&q=${searchs}`)
+    const suggestion = fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${ApiKey}&q=${searchs}`)
     eliminarSuggestion();
     suggestion.then(res => res.json())
         .then(data => {

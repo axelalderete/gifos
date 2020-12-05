@@ -128,19 +128,8 @@
                 <h3 class="h3_mis_gifos">Mis GIFOS </h3>
             </div>
 
-            <div id="img_favoritos" class="img_favoritos">
-                <img class="img_fav"
-                    src="https://media1.giphy.com/media/xUA7aT4k7JLXH71zG0/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
-                    alt="img">
-                <img class="img_fav"
-                    src="https://media4.giphy.com/media/eUJJITvncveDK/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
-                    alt="img">
-                <img class="img_fav"
-                    src="https://media3.giphy.com/media/Qvtzr3MZc6WI0/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
-                    alt="img">
-                <img class="img_fav"
-                    src="https://media3.giphy.com/media/3oz8xWqZk843O0TPXy/giphy.gif?cid=e67c63627qfukwyg1a66sz75kq9met0b914u9l6g4eyw4cw6&rid=giphy.gif"
-                    alt="img">
+            <div id="img-mis-gifos" class="img_favoritos">
+                
             </div>
             <div class="ver_mas_fav">
                 <div class="boton_ver_mas">VER MAS</div>
@@ -161,6 +150,17 @@
                 <p id="p-crear-gifos" class="crear-gifos-p">¡Crea tu GIFO en sólo 3 pasos! <br>
                     (sólo necesitas una cámara para grabar un video)</p>
                 <video class="video-gifo ocultar" id="video-gifo"></video>
+                <img class="video-gifo ocultar" id="img-video-gif" alt="gif">
+                <div id="contenedor-cargando" class="video-gifo color-cargando ocultar">
+                    <img id="cargando" class="cargando" src="/img/loader.svg" alt="">
+                    <h4 id="h4Cargando" class="h4-cargando">Estamos subiendo tu GIFO</h4>
+                </div>
+                <div id="contenedor-listo" class="video-gifo color-cargando ocultar">
+
+                    <img class="icon-download icon-tarjeta" onclick="donwloadGifoCreado()" alt="">
+                    <img id="cargando-ok" class="cargando-ok" src="/img/ok.svg" alt="">
+                    <h4 id="h4Cargando-ok" class="h4-cargando-ok">GIFO subido con éxito</h4>
+                </div>
             </div>
             <div class="crear-gifos-pasos">
                 <div id="paso1" class="pasos">1</div>
@@ -171,7 +171,7 @@
                 </div>
 
                 <div class="contenedor-repetir ocultar" id="contenedor-repetir">
-                    <p class="repetir" id="Tiempo">REPETIR CAPTURA</p>
+                    <p class="repetir" onclick='repetirGif()' id="repetir">REPETIR CAPTURA </p>
                 </div>
             </div>
             <div id="comenzar" class="comenzar">
