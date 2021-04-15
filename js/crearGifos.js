@@ -1,9 +1,9 @@
+// creamos la lista de gifos
+let listaMisGifos = [];
 //variable stream
 let recorder;
 let stream;
 function createGifo() {
-
-  console.log('createGifoOOOOOO')
   const crearGifos = document.getElementById('crear-gifos');
   const mainPag = document.getElementById('main-pag');
   const sectionGifos = document.getElementById('sectionGifos');
@@ -102,10 +102,8 @@ function finalizar() {
 }
 
 function subirGif() {
-  console.log('holasubirgif');
   let form = new FormData();
   // mostrar carga o subiendo del gif
-
   const contenedorCargando = document.getElementById('contenedor-cargando');
   contenedorCargando.classList.toggle('ocultar');
   const subirGif = document.getElementById('btn-subir-gif');
@@ -115,7 +113,6 @@ function subirGif() {
 
   // empieza la llamada al servicio para subir el gift
   form.append('file', recorder.getBlob(), 'myGif.gif');
-
   fetch(`https://upload.giphy.com/v1/gifs?api_key=${ApiKey}`, {
     method: "POST",
     body: form
@@ -123,26 +120,20 @@ function subirGif() {
     .then(response => {
       return response.json();
     }).then(data => {
-      // guardar el id que nos trajo en el localstorage como lista de strings
-      console.log(data.data.id);
       fetch("https://api.giphy.com/v1/gifs/" + data.data.id + `?&api_key=${ApiKey}`)
-      .then(response => {
+        .then(response => {
           return response.json();
-      }).then(obj => {
-          console.log(obj);
-          // creamos la lista de gifos
+        }).then(obj => {
           let listaMisGifos = [];
           urlGif = obj.data.images.original.url;
           // obtenemos la lista ya cargada de los gifos
           listaGuardada = JSON.parse(localStorage.getItem('misGifos'));
           listaMisGifos = listaGuardada ? listaGuardada : [];
-          console.log(listaMisGifos);
           // agregamos el nuevo
           listaMisGifos.push(urlGif);
-
           // actualizamos el localstorage
           localStorage.setItem('misGifos', JSON.stringify(listaMisGifos));
-      });
+        });
       // mostramos mensaje de exito y permitimos descargar
       const contenedorListo = document.getElementById('contenedor-listo');
       contenedorListo.classList.toggle('ocultar');
@@ -153,11 +144,18 @@ function subirGif() {
       console.log(err);
     });
 }
+function copyGifoCreado() {
+  navigator.clipboard.writeText(urlGif).then(function () {
+    alert('URL copiada en el portapapeles');
+  }, function () {
+    alert('no se a podido copiar');
+  });
+}
 
 function donwloadGifoCreado() {
-    // GUARDAR EN MI PC
-    let blob = recorder.getBlob();
-    invokeSaveAsDialog(blob);
+  // GUARDAR EN MI PC
+  let blob = recorder.getBlob();
+  invokeSaveAsDialog(blob);
 }
 
 function repetirGif() {
@@ -195,12 +193,6 @@ function parar() {
   clearInterval(control);
 }
 
-// function reinicio() {
-//   clearInterval(control);
-//   segundos = 0;
-//   minutos = 0;
-//   document.getElementById('Tiempo').innerHTML = ("0" + minutos + ":" + "0" + segundos);
-// }
 
 function cronometro() {
 
@@ -221,4 +213,72 @@ function cronometro() {
   } else {
     document.getElementById('Tiempo').innerHTML = (minutos + ":" + segundos);
   }
+}
+
+
+//crear y borrar gifos--------------
+
+
+function agregarElementosMisGifos(lista) {
+  if (!lista) return;
+  lista.forEach((element, i) => {
+
+    var divContenedor = document.createElement("div");
+    divContenedor.classList.add('container-tarjeta');
+
+    var divIcon = document.createElement("div");
+    divIcon.classList.add('img-iconos');
+
+
+    // IMG ICON X3 tarjeta
+    //icon fav
+    var iconFav = document.createElement("img");
+    iconFav.classList.add('icon-delete');
+    iconFav.classList.add('icon-tarjeta');
+    iconFav.setAttribute('id', element);
+    iconFav.onclick = function (ev) {
+      clickDeleteGifos(ev.target.id);
+      eliminarFavoritos();
+      clickDeleteFav();
+    };
+    // icono descargar  
+    var iconDow = document.createElement("img");
+    iconDow.classList.add('icon-dow');
+    iconDow.classList.add('icon-tarjeta');
+    iconDow.setAttribute('id', element);
+    iconDow.onclick = function (ev) {
+      clickIconDow(ev.target.id);
+    };
+    // icono maxxx
+    var iconMax = document.createElement("img");
+    iconMax.classList.add('icon-max');
+    iconMax.classList.add('icon-tarjeta');
+    iconMax.setAttribute('id', element);
+    iconMax.onclick = function (ev) {
+      clickIconMax(ev.target.id);
+    };
+    // IMG
+    var node = document.createElement("img");
+    node.setAttribute('src', element);
+    node.setAttribute('id', `img-gifo-${i}`);
+    node.classList.add('img_fav');
+
+    // ARMAR BLOQUE
+    divIcon.appendChild(iconFav);
+    divIcon.appendChild(iconDow);
+    divIcon.appendChild(iconMax);
+    divContenedor.appendChild(node);
+    divContenedor.appendChild(divIcon);
+    document.getElementById("img-mis-gifos").appendChild(divContenedor);
+  });
+}
+
+function clickDeleteGifos(id) {
+  const nuevaLista = listaMisGifos.filter(element => {
+    return element !== id
+  });
+  eliminarFavoritos();
+  localStorage.setItem('listFavoritos', JSON.stringify(nuevaLista));
+  listaMisGifos = JSON.parse(localStorage.getItem('listFavoritos'));
+  agregarElementosFavoritos();
 }

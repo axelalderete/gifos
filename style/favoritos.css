@@ -16,29 +16,40 @@
 }
 
 .img-iconos:hover {
-    opacity: 1;}
+    opacity: 1;
+}
 
-.icon-tarjeta{
+.icon-tarjeta {
     cursor: pointer;
 }
-.icon-tarjeta:hover{
-    opacity: 0.5 ;
+
+.icon-tarjeta:hover {
+    opacity: 0.5;
 }
 
 .icon-fav {
+    cursor: pointer;
     content: url(../img/icon-fav.svg);
 }
 
 .icon-dow {
+    cursor: pointer;
     content: url(../img/icon-download.svg);
 }
 
 .icon-download {
     content: url(../img/icon-download.svg);
     padding-left: 26rem;
+    margin-top: 6px;
 }
 
-
+.icon-copy {
+    position: absolute;
+    cursor: pointer;
+    content: url(../img/icon-link-hover.svg);
+    padding-left: 23rem;
+    margin-top: 6px;
+}
 
 .icon-max {
     content: url(../img/icon-max-normal.svg);
@@ -47,24 +58,39 @@
 .icon-fav:hover {
     content: url(../img/icon-fav-hover.svg);
 }
+
 .icon-dow:hover {
     content: url(../img/icon-download-hover.svg);
 }
+
 .icon-max:hover {
     content: url(../img/icon-max-hover.svg);
 }
 
-.icon-fav:active{
+.icon-fav:active {
     content: url(../img/icon-fav-active.svg);
     position: relative;
     top: -10px;
 }
 
-.icon-favoritos{
+.icon-favoritos {
     content: url(/img/icon-fav-active.svg);
     position: relative;
     top: -10px;
 }
+
+.icon-delete {
+    content: url(/img/icon-trash-normal.svg);
+    position: relative;
+}
+
+.icon-delete-hover {
+    content: url(/img/icon-trash-hover.svg);
+    position: relative;
+    top: -10px;
+}
+
+
 
 
 
@@ -98,7 +124,7 @@
 }
 
 .img_fav:hover {
-   opacity: 0.5;
+    opacity: 0.5;
 }
 
 .ver_mas_fav {
@@ -109,7 +135,7 @@
 }
 
 .boton_ver_mas {
-    
+
     font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 13px;
     color: #572EE5;

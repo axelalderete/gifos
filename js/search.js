@@ -2,11 +2,12 @@ const ApiKey = '3ptHQLAjuYlfN1FQVw03bWEaA0YqcwNf';
 let lista = [] // TOTAL DE LOS GIFOS ENCONTRADOS
 let listaMostrar = [] // SOLO LOS DOCE PRIMEROS
 let listaFavoritos = [];
-
+let trendings = []; // TRENDINGS ENCONTRADOS
+let srcSelect = null;
 // ELIMINAR VER MAS
 const btnVerMas = document.getElementById('btn-ver-mas');
 btnVerMas.style.display = 'none';
-
+this.getTrending();
 function search() {
     indexListaMostrar = 1;
     mostrarVerMas();
@@ -16,7 +17,6 @@ function search() {
     user.then(res => res.json())
         .then(data => {
             // aca ya eliminamos lo que habia
-
             lista = data.data;
             if (data.data.length < 13) {
                 listaMostrar = data.data;
@@ -25,9 +25,37 @@ function search() {
             }
             modificarTitulos();
             agregarElementosBusqueda();
+            modificarTitulos();
         }).catch(error => {
             console.error('Error');
         })
+        
+}
+
+function getTrending() {
+    const user = fetch(`http://api.giphy.com/v1/gifs/trending?api_key=${ApiKey}&limit=3`);
+    user.then(res => res.json())
+        .then(data => {
+            this.trendings = data.data.map(trending => {
+                return {
+                    title: trending.title
+                }
+            });
+            console.log(this.trendings)
+            const trending1 = document.getElementById('trending1');
+            const trending2 = document.getElementById('trending2');
+            const trending3 = document.getElementById('trending3');
+            trending1.innerHTML = this.trendings[0].title;
+            trending2.innerHTML = this.trendings[1].title;
+            trending3.innerHTML = this.trendings[2].title;
+        }).catch(error => {
+            console.error('Error');
+        })
+}
+
+function searchTrending(index) {
+    document.getElementById('search-input').value = this.trendings[index].title;
+    this.search();
 }
 
 function eliminarVerMas() {
@@ -47,6 +75,7 @@ function modificarTitulos() {
     divTrending.style.display = 'none';
     const searchTitulo = document.getElementById('search-text-select');
     const search = document.getElementById('search-input').value;
+    searchTitulo.style.display = 'block';
     searchTitulo.innerHTML = search;
 }
 
@@ -58,9 +87,7 @@ searchInput.addEventListener("keyup", (evento) => {
         document.getElementById('img-search').src = '/img/icon-search.svg';
         return;
     } else {
-
         document.getElementById('img-search').src = '/img/close.svg';
-        let imgSearch = document.getElementById('img-search').src
     }
     if (evento.keyCode === 13) {
         this.search();
@@ -85,14 +112,19 @@ function clearSearch() {
 let mostrarSuggestion = 0;
 
 function searchSuggestion() {
-
     const searchs = document.getElementById('search-input').value;
     const suggestion = fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=${ApiKey}&q=${searchs}`)
     eliminarSuggestion();
     suggestion.then(res => res.json())
         .then(data => {
             data.data.forEach((element) => {
+                var divIcon = document.createElement("div");
+                var sapnIcon = document.createElement("span");
                 var sug = document.createElement("h4");
+                divIcon.appendChild(sapnIcon);
+                divIcon.appendChild(sug);
+                sapnIcon.classList.toggle('img-search');
+                divIcon.classList.toggle('sug-search');
                 sug.innerHTML = element.name;
                 sug.onclick = function (ev) {
                     const searchChange = document.getElementById('search-input');
@@ -103,7 +135,7 @@ function searchSuggestion() {
                 };
                 sug.style.opacity = '22%';
                 sug.style.cursor = 'pointer';
-                document.getElementById("suggetion-search").appendChild(sug);
+                document.getElementById("suggetion-search").appendChild(divIcon);
             });
 
         })
@@ -185,54 +217,50 @@ function agregarElementosBusqueda() {
 
 
 function clickIconFav(ev) {
-    listaFavoritos.push(ev.target.id);
+    const image = ev ? ev.target.id : this.srcSelect;
+    listaFavoritos.push(image);
     localStorage.setItem('listFavoritos', JSON.stringify(listaFavoritos));
 }
 
 async function clickIconDow(id) {
-    console.log(id);
-  let a = document.createElement('a');
-  let response = await fetch(id);
-  let file = await response.blob();
-  a.download = 'myGif';
-  a.href = window.URL.createObjectURL(file);
-  a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
-  a.click();
+    const image = id ? id : this.srcSelect;
+    console.log(image);
+    let a = document.createElement('a');
+    let response = await fetch(image);
+    let file = await response.blob();
+    a.download = 'myGif';
+    a.href = window.URL.createObjectURL(file);
+    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
+    a.click();
 }
 
 function clickIconMax(ev) {
-    console.log(ev);
-    const header = document.getElementById('header'); 
+    this.srcSelect = ev; // guardamos el src de la imagen seleccionada
+    const header = document.getElementById('header');
     const max = document.getElementById('max');
     const mainPag = document.getElementById('main-pag');
     const sectionGifos = document.getElementById('sectionGifos');
     const footer = document.getElementById('footer');
     const fovoritesPage = document.getElementById('favorites-page');
     document.getElementById('img-max').src = ev;
-
-
     header.style.display = 'none';
     max.style.display = 'block';
     mainPag.style.display = 'none';
     sectionGifos.style.display = 'none';
     footer.style.display = 'none';
     fovoritesPage.style.display = 'none';
-
 }
 
-function closeMax(){
-    console.log('closemaxxx');
-    const header = document.getElementById('header'); 
+function closeMax() {
+    const header = document.getElementById('header');
     const max = document.getElementById('max');
     const mainPag = document.getElementById('main-pag');
     const sectionGifos = document.getElementById('sectionGifos');
     const footer = document.getElementById('footer');
     const fovoritesPage = document.getElementById('favorites-page');
-    
     header.style.display = 'block';
     max.style.display = 'none';
     mainPag.style.display = 'block';
     sectionGifos.style.display = 'block';
     footer.style.display = 'block';
-
 }

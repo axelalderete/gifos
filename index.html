@@ -63,6 +63,7 @@
         <div class="busqueda_central">
             <div class="busqueda">
                 <div class="searchInterno">
+                    <img src="/img/icon-search-mod-noc.svg" alt="img">
                     <input id="search-input" autocomplete="off" class="input_search" type="text"
                         placeholder="Busca GIFOS y más">
                     <img id="img-search" onclick="clearSearch()" class="icon_search" src="/img/icon-search.svg"
@@ -78,8 +79,12 @@
         <!-- trending------------------------------ -->
 
         <div id="div-trending" class="trending">
-            <h3 id="h3Trending">Trending: <br> <span class="p_trending"> Reactions, Entertainment, Sports, Stickers,
-                    Artists
+            <h3 id="h3Trending">Trending: <br> <span class="p_trending"> 
+                <div>
+                    <span id="trending1" style="cursor: pointer;" onclick="searchTrending(0)"></span>
+                    <span id="trending2" style="cursor: pointer;" onclick="searchTrending(1)"></span>
+                    <span id="trending3" style="cursor: pointer;" onclick="searchTrending(2)"></span>
+                </div>                
                 </span></h3>
         </div>
 
@@ -150,13 +155,14 @@
                 <p id="p-crear-gifos" class="crear-gifos-p">¡Crea tu GIFO en sólo 3 pasos! <br>
                     (sólo necesitas una cámara para grabar un video)</p>
                 <video class="video-gifo ocultar" id="video-gifo"></video>
-                <img class="video-gifo ocultar" id="img-video-gif" alt="gif">
+                <img src="" class="video-gifo ocultar" id="img-video-gif" alt="gif">
                 <div id="contenedor-cargando" class="video-gifo color-cargando ocultar">
                     <img id="cargando" class="cargando" src="/img/loader.svg" alt="">
                     <h4 id="h4Cargando" class="h4-cargando">Estamos subiendo tu GIFO</h4>
                 </div>
                 <div id="contenedor-listo" class="video-gifo color-cargando ocultar">
 
+                    <img class="icon-copy icon-tarjeta" onclick="copyGifoCreado()" alt="">
                     <img class="icon-download icon-tarjeta" onclick="donwloadGifoCreado()" alt="">
                     <img id="cargando-ok" class="cargando-ok" src="/img/ok.svg" alt="">
                     <h4 id="h4Cargando-ok" class="h4-cargando-ok">GIFO subido con éxito</h4>
@@ -198,8 +204,8 @@
                 <p>User <br>Titulo GIFO</p>
             </div>
             <div class="iconos-img-max">
-                <img src="/img/icon-fav.svg" alt="img">
-                <img src="/img/icon-download.svg" alt="img">
+                <img onclick="clickIconFav()" class="icon-fav" id="favorite-max" src="/img/icon-fav.svg" alt="img">
+                <img onclick="clickIconDow()" class="icon-dow" id="download-max" src="/img/icon-download.svg" alt="img">
             </div>
         </div>
     </div>

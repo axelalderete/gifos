@@ -1,6 +1,4 @@
-
-
-.crear-gifos{
+.crear-gifos {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,11 +6,11 @@
     margin-top: 3rem;
 }
 
-.img-camara{
+.img-camara {
     padding-top: 7%;
 }
 
-.crear-gifos-contenedor{
+.crear-gifos-contenedor {
     font-size: 25px;
     width: 688px;
     height: 390px;
@@ -24,15 +22,16 @@
     margin: 0px 6rem;
 }
 
-.span-gifos{
+.span-gifos {
     color: #00F3BB;
 }
-.crear-gifos-p{
+
+.crear-gifos-p {
     font-size: 12px;
     color: black;
 }
 
-.crear-gifos-pasos{
+.crear-gifos-pasos {
     display: flex;
     justify-content: center;
     border-bottom: 8px solid #572EE5;
@@ -40,7 +39,7 @@
     padding-left: 3rem;
 }
 
-.pasos{
+.pasos {
     border-radius: 100%;
     border: 1px solid #572EE5;
     margin: 1rem;
@@ -52,22 +51,23 @@
     color: #572EE5;
 }
 
-.paso-on{
+.paso-on {
     background: #572EE5;
-    color: white;    
-}
-.paso-off{
-    background: white;
-    color: #572EE5;    
+    color: white;
 }
 
-.comenzar{
+.paso-off {
+    background: white;
+    color: #572EE5;
+}
+
+.comenzar {
     display: flex;
     justify-content: center;
     padding-top: 2rem;
 }
 
-.boton-comenzar{
+.boton-comenzar {
     border: 1px solid #572EE5;
     border-radius: 25px;
     font-size: 13px;
@@ -84,7 +84,7 @@
     display: none;
 }
 
-.img-pelicula{
+.img-pelicula {
     padding-top: 23%;
 }
 
@@ -95,13 +95,14 @@
 }
 
 
-.tiempo{
+.tiempo {
     position: absolute;
     font-size: 15px;
     color: #572EE5;
     margin: 1.2rem 0 0 12%;
 }
-.repetir{
+
+.repetir {
     cursor: pointer;
     position: absolute;
     font-size: 15px;
@@ -109,13 +110,13 @@
     margin: 1.2rem 0 0 7%;
 }
 
-.color-cargando{
-    background-color:rgb(87, 46, 229, 0.5);
+.color-cargando {
+    background-color: rgb(87, 46, 229, 0.5);
     position: absolute;
     margin: -21rem 6.5rem;
 }
 
-.h4-cargando{
+.h4-cargando {
     color: white;
     width: 315px;
     height: 22px;
@@ -129,7 +130,7 @@
     margin: 2rem 5rem;
 }
 
-.cargando{
+.cargando {
     margin: -5rem 12rem;
 }
 
