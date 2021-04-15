@@ -13,7 +13,7 @@ function search() {
     mostrarVerMas();
     eliminarBusqueda();
     const search = document.getElementById('search-input').value;
-    const user = fetch(`http://api.giphy.com/v1/gifs/search?api_key=${ApiKey}&q=${search}`);
+    const user = fetch(`https://api.giphy.com/v1/gifs/search?api_key=${ApiKey}&q=${search}`);
     user.then(res => res.json())
         .then(data => {
             // aca ya eliminamos lo que habia
@@ -33,7 +33,7 @@ function search() {
 }
 
 function getTrending() {
-    const user = fetch(`http://api.giphy.com/v1/gifs/trending?api_key=${ApiKey}&limit=3`);
+    const user = fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${ApiKey}&limit=3`);
     user.then(res => res.json())
         .then(data => {
             this.trendings = data.data.map(trending => {
