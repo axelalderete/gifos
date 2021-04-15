@@ -11,17 +11,16 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/gifos/style/menu.css" media="">
-    <link rel="stylesheet" href="/gifos/style/footer.css" media="">
-    <link rel="stylesheet" href="/gifos/style/favoritos.css" media="">
-    <link rel="stylesheet" href="/gifos/style/mis_gifos.css" media="">
-    <link rel="stylesheet" href="/gifos/style/trending.css" media="">
-    <link rel="stylesheet" href="/gifos/style/header.css" media="">
-    <link rel="stylesheet" href="/gifos/style/title.css" media="">
-    <link rel="stylesheet" href="/gifos/style/max.css" media="">
-    <link rel="stylesheet" href="/gifos/style/crearGifos.css" media="">
-    <link rel="stylesheet" href="/gifos/style/cronometro.css" media="">
-    <base href="/gifos/"/>
+    <link rel="stylesheet" href="./style/menu.css" media="">
+    <link rel="stylesheet" href="./style/footer.css" media="">
+    <link rel="stylesheet" href="./style/favoritos.css" media="">
+    <link rel="stylesheet" href="./style/mis_gifos.css" media="">
+    <link rel="stylesheet" href="./style/trending.css" media="">
+    <link rel="stylesheet" href="./style/header.css" media="">
+    <link rel="stylesheet" href="./style/title.css" media="">
+    <link rel="stylesheet" href="./style/max.css" media="">
+    <link rel="stylesheet" href="./style/crearGifos.css" media="">
+    <link rel="stylesheet" href="./style/cronometro.css" media="">
     <title>Document</title>
 </head>
 
@@ -37,12 +36,12 @@
             <label class="cruzbtn" for="check">
                 <i class="fa fa-times"></i>
             </label>
-            <img id="iconoGifos" onclick="goToMenu()" class="icono" src="/gifos/img/logo-desktop.svg" alt="img">
+            <img id="iconoGifos" onclick="goToMenu()" class="icono" src="img/logo-desktop.svg" alt="img">
             <ul>
                 <li class="li-link" onclick="darkMode()"><a id="mode_dark">MODO NOCTURNO</a></li>
                 <li class="li-link" id="btn_fav" onclick="goToFavorites()"><a>FAVORITOS</a></li>
                 <li class="li-link" id="btn_misG" onclick="goToMyGifos()"><a>MIS GIFOS</a></li>
-                <li class="li-icon" onclick="createGifo()"><a><img class="crear_gifos" src="/gifos/img/button-crear-gifo.svg"
+                <li class="li-icon" onclick="createGifo()"><a><img class="crear_gifos" src="img/button-crear-gifo.svg"
                             alt="img"></a></li>
             </ul>
         </nav>
@@ -56,17 +55,17 @@
 
         <!-- imagen de la busqueda------------------- -->
         <article class="ilustra_header">
-            <img class="img_ilustra_header" src="/gifos/img/ilustra_header.svg" alt="img">
+            <img class="img_ilustra_header" src="img/ilustra_header.svg" alt="img">
         </article>
 
         <!-- busqueda central --------------------------------- -->
         <div class="busqueda_central">
             <div class="busqueda">
                 <div class="searchInterno">
-                    <img src="/gifos/img/icon-search-mod-noc.svg" alt="img">
+                    <img src="img/icon-search-mod-noc.svg" alt="img">
                     <input id="search-input" autocomplete="off" class="input_search" type="text"
                         placeholder="Busca GIFOS y más">
-                    <img id="img-search" onclick="clearSearch()" class="icon_search" src="/gifos/img/icon-search.svg"
+                    <img id="img-search" onclick="clearSearch()" class="icon_search" src="img/icon-search.svg"
                         alt="img">
                 </div>
 
@@ -112,7 +111,7 @@
         <article class="favoritos">
 
             <div class="title_favoritos">
-                <img class="icon_favoritos" src="/gifos/img/icon-favoritos.svg" alt="img">
+                <img class="icon_favoritos" src="img/icon-favoritos.svg" alt="img">
                 <h3 class="h3_favoritos">Favoritos</h3>
             </div>
             <div id="img_favoritos" class="img_favoritos">
@@ -129,7 +128,7 @@
         <article class="mis_gifos">
 
             <div class="title_mis_gifos">
-                <img class="icon_mis_gifos" src="/gifos/img/icon-mis-gifos.svg" alt="img">
+                <img class="icon_mis_gifos" src="img/icon-mis-gifos.svg" alt="img">
                 <h3 class="h3_mis_gifos">Mis GIFOS </h3>
             </div>
 
@@ -146,7 +145,7 @@
     <!-- CREAR GIFOSSS ------------------------- -->
     <div id="crear-gifos" class="crear-gifos" style="display: none;">
         <div class="img-camara">
-            <img src="/gifos/img/camara.svg" alt="img">
+            <img src="img/camara.svg" alt="img">
         </div>
         <div class="columna-centarl">
             <div class="crear-gifos-contenedor">
@@ -157,14 +156,14 @@
                 <video class="video-gifo ocultar" id="video-gifo"></video>
                 <img src="" class="video-gifo ocultar" id="img-video-gif" alt="gif">
                 <div id="contenedor-cargando" class="video-gifo color-cargando ocultar">
-                    <img id="cargando" class="cargando" src="/gifos/img/loader.svg" alt="">
+                    <img id="cargando" class="cargando" src="img/loader.svg" alt="">
                     <h4 id="h4Cargando" class="h4-cargando">Estamos subiendo tu GIFO</h4>
                 </div>
                 <div id="contenedor-listo" class="video-gifo color-cargando ocultar">
 
                     <img class="icon-copy icon-tarjeta" onclick="copyGifoCreado()" alt="">
                     <img class="icon-download icon-tarjeta" onclick="donwloadGifoCreado()" alt="">
-                    <img id="cargando-ok" class="cargando-ok" src="/gifos/img/ok.svg" alt="">
+                    <img id="cargando-ok" class="cargando-ok" src="img/ok.svg" alt="">
                     <h4 id="h4Cargando-ok" class="h4-cargando-ok">GIFO subido con éxito</h4>
                 </div>
             </div>
@@ -188,24 +187,24 @@
             </div>
         </div>
         <div class="img-pelicula">
-            <img src="/gifos/img/pelicula.svg" alt="img">
+            <img src="img/pelicula.svg" alt="img">
         </div>
 
     </div>
 
     <!-- MAXXXXXXXXX--------------------- -->
     <div id="max" class="max" style="display: none;">
-        <div onclick="closeMax()" class="close-max"><img src="/gifos/img/close.svg" alt=""></div>
+        <div onclick="closeMax()" class="close-max"><img src="img/close.svg" alt=""></div>
         <div class="cont-img-max">
-            <img id="img-max" class="img-max" src="/gifos/img/element-camara.svg" alt="img">
+            <img id="img-max" class="img-max" src="img/element-camara.svg" alt="img">
         </div>
         <div class="max-footer">
             <div class="p-img-max">
                 <p>User <br>Titulo GIFO</p>
             </div>
             <div class="iconos-img-max">
-                <img onclick="clickIconFav()" class="icon-fav" id="favorite-max" src="/gifos/img/icon-fav.svg" alt="img">
-                <img onclick="clickIconDow()" class="icon-dow" id="download-max" src="/gifos/img/icon-download.svg" alt="img">
+                <img onclick="clickIconFav()" class="icon-fav" id="favorite-max" src="img/icon-fav.svg" alt="img">
+                <img onclick="clickIconDow()" class="icon-dow" id="download-max" src="img/icon-download.svg" alt="img">
             </div>
         </div>
     </div>
@@ -219,7 +218,7 @@
 
 
         <section class="section">
-            <div class="boton_section" onclick=""><img src="/gifos/img/button-slider-left.svg" alt="img"></div>
+            <div class="boton_section" onclick=""><img src="img/button-slider-left.svg" alt="img"></div>
             <div class="img_section">
                 <img class="img_gif_section img_gif_section1"
                     src="https://media1.giphy.com/media/vzO0Vc8b2VBLi/giphy.gif?cid=e67c63626ofggu220qfymo68oympe3bgyf8r2myy9cnv7adw&rid=giphy.gif"
@@ -231,7 +230,7 @@
                     src="https://media3.giphy.com/media/p4NLw3I4U0idi/giphy.gif?cid=e67c63626ofggu220qfymo68oympe3bgyf8r2myy9cnv7adw&rid=giphy.gif"
                     alt="img">
             </div>
-            <div class="boton_section" onclick=""><img src="/gifos/img/Button-Slider-right.svg" alt=""></div>
+            <div class="boton_section" onclick=""><img src="img/Button-Slider-right.svg" alt=""></div>
         </section>
     </div>
 
@@ -241,17 +240,17 @@
         <div class="icon-footer">
             <h4>Compartir en:</h4>
             <div class="div_img">
-                <img class="icons" src="/gifos/img/icon_facebook.svg" alt="icon">
-                <img class="icons" src="/gifos/img/icon-twitter.svg" alt="icon">
-                <img class="icons" src="/gifos/img/icon_instagram.svg" alt="icon">
+                <img class="icons" src="img/icon_facebook.svg" alt="icon">
+                <img class="icons" src="img/icon-twitter.svg" alt="icon">
+                <img class="icons" src="img/icon_instagram.svg" alt="icon">
             </div>
         </div>
         <h4 class="rights-footer">© GIFOS 2020 All Rights Reserved.</h4>
     </footer>
 
-    <script src="/gifos/js/header.js"></script>
-    <script src="/gifos/js/search.js"></script>
-    <script src="/gifos/js/crearGifos.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/crearGifos.js"></script>
 </body>
 
 </html>
